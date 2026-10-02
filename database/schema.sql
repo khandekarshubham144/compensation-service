@@ -1,0 +1,20 @@
+CREATE TABLE Department (
+    DepartmentID INT PRIMARY KEY,
+    DepartmentName VARCHAR(100) NOT NULL,
+    Location VARCHAR(100) NULL
+);
+
+CREATE TABLE Employee (
+    EmployeeID INT IDENTITY(1,1) PRIMARY KEY,
+    FirstName VARCHAR(50) NOT NULL,
+    LastName VARCHAR(50) NOT NULL,
+    DepartmentID INT NOT NULL
+        FOREIGN KEY REFERENCES Department(DepartmentID),
+    Salary DECIMAL(12,2) NOT NULL,
+    Bonus DECIMAL(12,2) NULL,
+    HireDate DATE
+);
+
+-- SELECT TABLE_NAME
+-- FROM INFORMATION_SCHEMA.TABLES
+-- WHERE TABLE_TYPE = 'BASE TABLE';
