@@ -20,3 +20,6 @@ VALUES
 
 SELECT * from Employee;
 -- SELECT * from Department;
+
+SELECT COALESCE(SUM(Bonus), 0) AS TotalBonus
+FROM Employee;
